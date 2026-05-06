@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doha Founders Meet &amp; Greet — May 9, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-deep: #1a0822;
+      --purple-mid: #2e0a3d;
+      --purple-light: #4a1a5c;
+      --gold: #e8d5b5;
+      --gold-rich: #c9a962;
+      --white: #faf8fc;
+      --muted: rgba(255, 255, 255, 0.82);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--purple-deep);
+      color: var(--white);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .page-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 120% 80% at 100% 20%, rgba(138, 80, 180, 0.35), transparent 50%),
+        radial-gradient(ellipse 80% 60% at 0% 100%, rgba(90, 40, 120, 0.4), transparent 45%),
+        linear-gradient(180deg, var(--purple-deep) 0%, var(--purple-mid) 40%, #1f0a28 100%);
+    }
+
+    .page-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(30deg, transparent 40%, rgba(255, 255, 255, 0.03) 40%, rgba(255, 255, 255, 0.03) 45%, transparent 45%),
+        linear-gradient(-25deg, transparent 48%, rgba(255, 255, 255, 0.02) 48%, rgba(255, 255, 255, 0.02) 52%, transparent 52%);
+      background-size: 120px 100px, 100px 80px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    .logo-row {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .logo svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-family: "Outfit", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .date-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    .date-rule::before,
+    .date-rule::after {
+      content: "";
+      height: 1px;
+      width: min(5rem, 18vw);
+      background: linear-gradient(90deg, transparent, rgba(232, 213, 181, 0.5), transparent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .visual {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(232, 213, 181, 0.15);
+    }
+
+    .visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+
+    .speaker-caption {
+      margin-top: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    .speaker-caption p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .speaker-caption strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-top: 0.35rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .card h2 {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .card .sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 0.35rem;
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(15, 5, 20, 0.6);
+      color: var(--white);
+      font: inherit;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--gold-rich);
+      box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.2);
+    }
+
+    .optional-tag {
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 0.7;
+      font-size: 0.75rem;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.9rem 1.25rem;
+      border: none;
+      border-radius: 10px;
+      font-family: "Outfit", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(180deg, #d4b978 0%, var(--gold-rich) 100%);
+      color: var(--purple-deep);
+      box-shadow: 0 8px 24px rgba(201, 169, 98, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(201, 169, 98, 0.45);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .alt-reg {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .alt-reg a {
+      color: var(--gold);
+      word-break: break-all;
+    }
+
+    .success {
+      display: none;
+      padding: 1.25rem;
+      border-radius: 10px;
+      background: rgba(80, 180, 120, 0.2);
+      border: 1px solid rgba(120, 220, 160, 0.4);
+      color: #c8f0d8;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .success.visible {
+      display: block;
+    }
+
+    form.hidden {
+      display: none;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1.75rem 1.5rem;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    footer h3 {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-grid a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .contact-grid a:hover {
+      text-decoration: underline;
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header class="logo-row">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+          <ellipse cx="12" cy="12" rx="4" ry="10" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <path d="M2 12h20" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+        </svg>
+        <span>Stephen Akintayo Foundation</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>Doha Founders Meet &amp; Greet</h1>
+      <p class="date-rule">4PM · Saturday, 9th May, 2026</p>
+    </section>
+
+    <div class="grid">
+      <div>
+        <div class="visual">
+          <img src="assets/flyer.png" alt="Doha Founders Meet &amp; Greet with Dr. Stephen Akintayo" width="540" height="720" />
+        </div>
+        <div class="speaker-caption">
+          <p>Featured speaker</p>
+          <strong>Dr. Stephen Akintayo</strong>
+          <p style="margin-top: 0.25rem;">Founder, SACI Holdings</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Register</h2>
+        <p class="sub">Reserve your spot for the meet and greet. We will confirm by email.</p>
+
+        <div id="success-msg" class="success" role="status">
+          Thank you — your registration details were received. Check your inbox for next steps.
+        </div>
+
+        <form id="reg-form" action="https://formspree.io/f/xaqvbwnl" method="POST" novalidate>
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required placeholder="Your full name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+974 … or your number" />
+          </div>
+          <div class="field">
+            <label for="company" required>Company / startup <span class="optional-tag"></span></label>
+            <input id="company" name="company" type="text" autocomplete="organization" placeholder="Name of your company" />
+          </div>
+          <button type="submit" class="btn">Register now</button>
+        </form>
+
+        <!-- <p class="alt-reg">
+          Prefer the main site?<br />
+          <a href="https://www.stephenakintayo.com/dohameet" target="_blank" rel="noopener noreferrer">www.stephenakintayo.com/dohameet</a>
+        </p> -->
+      </div>
+    </div>
+
+    <footer>
+      <h3>For more info</h3>
+      <div class="contact-grid">
+        <a href="mailto:PRODUCTS@STEPHENAKINTAYO.COM">PRODUCTS@STEPHENAKINTAYO.COM</a>
+        <a href="tel:+2348167901719">+234 816 790 1719</a>
+        <a href="tel:+12815050527">+1 (281) 505-0527</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById("reg-form");
+      var success = document.getElementById("success-msg");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        })
+          .then(function (res) {
+            if (res.ok) {
+              form.classList.add("hidden");
+              success.classList.add("visible");
+            } else {
+              return res.json().then(function (data) {
+                var msg =
+                  (data && data.error) || "Something went wrong. Please try again.";
+                throw new Error(typeof msg === "string" ? msg : "Submit failed");
+              });
+            }
+          })
+          .catch(function () {
+            btn.disabled = false;
+            alert("Could not send your registration. Please try again or email us.");
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
