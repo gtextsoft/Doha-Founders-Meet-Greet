@@ -269,25 +269,6 @@
       word-break: break-all;
     }
 
-    .success {
-      display: none;
-      padding: 1.25rem;
-      border-radius: 10px;
-      background: rgba(80, 180, 120, 0.2);
-      border: 1px solid rgba(120, 220, 160, 0.4);
-      color: #c8f0d8;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .success.visible {
-      display: block;
-    }
-
-    form.hidden {
-      display: none;
-    }
-
     footer {
       margin-top: 3rem;
       padding: 1.75rem 1.5rem;
@@ -358,10 +339,6 @@
         <h2>Register</h2>
         <p class="sub">Reserve your spot for the meet and greet. We will confirm by email.</p>
 
-        <div id="success-msg" class="success" role="status">
-          Thank you — your registration details were received. Check your inbox for next steps.
-        </div>
-
         <form id="reg-form" action="https://formspree.io/f/xaqvbwnl" method="POST" novalidate>
           <div class="field">
             <label for="fullName">Full name</label>
@@ -402,7 +379,6 @@
   <script>
     (function () {
       var form = document.getElementById("reg-form");
-      var success = document.getElementById("success-msg");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!form.reportValidity()) return;
@@ -415,8 +391,7 @@
         })
           .then(function (res) {
             if (res.ok) {
-              form.classList.add("hidden");
-              success.classList.add("visible");
+              window.location.href = "thank-you.html";
             } else {
               return res.json().then(function (data) {
                 var msg =
