@@ -1,411 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Doha Founders Meet &amp; Greet — May 9, 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --purple-deep: #1a0822;
-      --purple-mid: #2e0a3d;
-      --purple-light: #4a1a5c;
-      --gold: #e8d5b5;
-      --gold-rich: #c9a962;
-      --white: #faf8fc;
-      --muted: rgba(255, 255, 255, 0.82);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Doha CEO &amp; Founders Meet &amp; Greet — 6 July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon-deep:#3F0820;
+    --maroon:#5C0E2E;
+    --maroon-rich:#7A1538;
+    --gold:#C9A24B;
+    --gold-soft:#E1C588;
+    --ivory:#F8F8FA;
+    --sand:#D9D7E0;
+    --bg:#EFEFF3;
+    --ink:#1A0810;
+    --ink-soft:#5B5560;
+    --line:rgba(201,162,75,.28);
+    --line-soft:#E3E1E8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Archivo",system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;
+    font-weight:600;color:var(--gold);
+  }
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.02}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;color:var(--ivory);
+    background:
+      radial-gradient(120% 90% at 75% -10%, rgba(201,162,75,.22), transparent 55%),
+      linear-gradient(180deg,var(--maroon-deep) 0%, var(--maroon) 48%, var(--maroon-rich) 100%);
+    padding:clamp(28px,5vw,40px) 0 0;
+  }
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:18px}
+  .brand{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold-soft)}
+  .topbar a{color:var(--ivory);text-decoration:none;font-size:.85rem;font-weight:600;opacity:.85}
+  .topbar a:hover{opacity:1}
+  .hero-inner{padding:clamp(48px,9vw,104px) 0 clamp(150px,18vw,220px);position:relative;z-index:2}
+  .kicker{margin-bottom:22px}
+  .hero h1{
+    font-size:clamp(3rem,9.5vw,6.6rem);letter-spacing:-.02em;
+    margin:0 0 6px;text-wrap:balance;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero .lede{
+    max-width:560px;margin-top:24px;font-size:clamp(1.05rem,2.2vw,1.3rem);
+    color:rgba(248,248,250,.86);font-weight:400;
+  }
+  .meta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .chip{
+    display:inline-flex;align-items:center;gap:9px;
+    border:1px solid var(--line);border-radius:999px;
+    padding:10px 18px;font-size:.92rem;font-weight:600;
+    background:rgba(255,255,255,.04);backdrop-filter:blur(2px);
+  }
+  .chip svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.7}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:.98rem;
+    padding:16px 30px;border-radius:6px;cursor:pointer;border:1px solid transparent;
+    text-decoration:none;transition:transform .15s ease,box-shadow .2s ease,background .2s ease;
+  }
+  .btn-gold{background:var(--gold);color:var(--maroon-deep);box-shadow:0 10px 30px rgba(201,162,75,.3)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(201,162,75,.42)}
+  .btn-ghost{border-color:var(--line);color:var(--ivory)}
+  .btn-ghost:hover{background:rgba(255,255,255,.06)}
+  /* skyline */
+  .skyline{position:absolute;left:0;right:0;bottom:-1px;width:100%;z-index:1;display:block;opacity:.9}
+  .skyline path{fill:rgba(63,8,32,.55)}
+  .skyline .near{fill:var(--maroon-deep)}
 
-    body {
-      font-family: "DM Sans", system-ui, sans-serif;
-      background: var(--purple-deep);
-      color: var(--white);
-      min-height: 100vh;
-      line-height: 1.5;
-    }
+  /* ---------- VALUE STRIP ---------- */
+  .strip{background:var(--ink);color:var(--sand)}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:8px 40px;justify-content:center;padding:18px 28px}
+  .strip span{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+  .strip .dot{color:var(--gold)}
 
-    .page-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background:
-        radial-gradient(ellipse 120% 80% at 100% 20%, rgba(138, 80, 180, 0.35), transparent 50%),
-        radial-gradient(ellipse 80% 60% at 0% 100%, rgba(90, 40, 120, 0.4), transparent 45%),
-        linear-gradient(180deg, var(--purple-deep) 0%, var(--purple-mid) 40%, #1f0a28 100%);
-    }
+  /* ---------- SECTIONS ---------- */
+  section.block{padding:clamp(64px,9vw,108px) 0}
+  .sec-head{max-width:640px;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(2rem,5vw,3.1rem);letter-spacing:-.01em;margin-top:14px}
+  .sec-head p{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
 
-    .page-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.12;
-      background-image:
-        linear-gradient(30deg, transparent 40%, rgba(255, 255, 255, 0.03) 40%, rgba(255, 255, 255, 0.03) 45%, transparent 45%),
-        linear-gradient(-25deg, transparent 48%, rgba(255, 255, 255, 0.02) 48%, rgba(255, 255, 255, 0.02) 52%, transparent 52%);
-      background-size: 120px 100px, 100px 80px;
-    }
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    background:#fff;border:1px solid var(--line-soft);border-radius:14px;
+    padding:34px 30px;position:relative;overflow:hidden;
+    transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 22px 44px rgba(63,8,32,.1)}
+  .card .num{font-family:"Fraunces",serif;font-size:1rem;color:var(--gold);font-weight:600}
+  .card h3{font-size:1.5rem;margin:16px 0 12px;color:var(--maroon)}
+  .card p{color:var(--ink-soft);font-size:.99rem}
 
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 3rem;
-    }
+  /* convener */
+  .convener{background:var(--maroon);color:var(--ivory)}
+  .convener .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,6vw,72px);align-items:center}
+  .portrait{
+    aspect-ratio:4/5;border-radius:16px;overflow:hidden;
+    border:1px solid var(--line);position:relative;
+    background:linear-gradient(160deg,var(--maroon-rich),var(--maroon-deep));
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .convener h2{font-size:clamp(1.9rem,4.5vw,2.8rem);margin:14px 0 18px}
+  .convener p{color:rgba(248,248,250,.84);font-size:1.06rem;max-width:520px}
+  .convener .role{color:var(--gold-soft);font-weight:600;letter-spacing:.04em;margin-top:4px}
 
-    .logo-row {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+  /* details */
+  .details{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden}
+  .detail{background:#fff;padding:32px 30px}
+  .detail .lbl{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .detail .val{font-family:"Fraunces",serif;font-size:1.55rem;color:var(--maroon);margin-top:10px}
+  .detail .sub{color:var(--ink-soft);font-size:.95rem;margin-top:4px}
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+  /* ---------- REGISTER ---------- */
+  .register{background:var(--maroon-deep);color:var(--ivory)}
+  .reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,72px);align-items:start}
+  .reg-copy h2{font-size:clamp(2.1rem,5vw,3.3rem);margin-bottom:20px}
+  .reg-copy h2 em{font-style:italic;color:var(--gold-soft)}
+  .reg-copy p{color:rgba(248,248,250,.84);font-size:1.08rem;max-width:440px}
+  .reg-list{margin-top:28px;display:flex;flex-direction:column;gap:14px}
+  .reg-list li{display:flex;gap:12px;align-items:flex-start;list-style:none;color:rgba(248,248,250,.92)}
+  .reg-list svg{width:20px;height:20px;flex:none;stroke:var(--gold);fill:none;stroke-width:2;margin-top:2px}
 
-    .logo svg {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-    }
+  .form-card{background:#fff;color:var(--ink);border-radius:18px;padding:clamp(28px,4vw,40px)}
+  .form-card h3{font-size:1.5rem;color:var(--maroon);margin-bottom:6px}
+  .form-card .hint{font-size:.9rem;color:var(--ink-soft);margin-bottom:24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin-bottom:7px}
+  .field input,.field select{
+    width:100%;padding:13px 15px;border:1px solid #D4D2DC;border-radius:8px;
+    font-family:"Archivo",sans-serif;font-size:1rem;background:#fff;color:var(--ink);
+    transition:border .15s ease,box-shadow .15s ease;
+  }
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.22)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-card .btn-gold{width:100%;margin-top:10px;padding:17px}
+  .form-note{font-size:.82rem;color:var(--ink-soft);margin-top:14px;text-align:center}
+  .form-error{display:none;font-size:.86rem;color:#b3402f;background:#fbecea;border:1px solid #f0cfc9;border-radius:8px;padding:10px 14px;margin-bottom:6px}
+  .form-error.show{display:block}
+  .form-note a{color:var(--maroon-rich);font-weight:600}
+  /* success */
+  .success{display:none;text-align:center;padding:18px 0}
+  .success.show{display:block}
+  .success .tick{width:64px;height:64px;border-radius:50%;background:var(--maroon);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+  .success .tick svg{width:30px;height:30px;stroke:var(--gold-soft);fill:none;stroke-width:2.4}
+  .success h3{font-size:1.7rem;margin-bottom:10px}
+  .success p{color:var(--ink-soft)}
+  .success .btn-gold{display:inline-flex;width:auto;margin-top:22px}
 
-    .hero {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
+  /* ---------- SPONSOR / FOOTER ---------- */
+  .sponsor{background:var(--ink);color:var(--sand);padding:clamp(56px,8vw,88px) 0}
+  .sponsor h2{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--ivory);margin-bottom:14px}
+  .sponsor p{color:rgba(217,215,224,.72);max-width:520px;margin-bottom:30px}
+  .contacts{display:flex;flex-wrap:wrap;gap:14px 44px}
+  .contact .lbl{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .contact .val{font-family:"Fraunces",serif;font-size:1.25rem;color:var(--ivory);margin-top:6px}
+  .contact a{color:var(--ivory);text-decoration:none}
+  .contact a:hover{color:var(--gold-soft)}
+  footer{background:var(--maroon-deep);color:rgba(248,248,250,.6);padding:30px 0;font-size:.85rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
-    .hero h1 {
-      font-family: "Outfit", sans-serif;
-      font-weight: 800;
-      font-size: clamp(1.75rem, 5vw, 2.75rem);
-      letter-spacing: 0.04em;
-      line-height: 1.1;
-      color: var(--gold);
-      text-transform: uppercase;
-      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
-    }
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .hero .kicker,.hero h1,.hero .lede,.hero .meta-row,.hero .cta-row{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero h1{animation-delay:.08s}
+  .hero .lede{animation-delay:.18s}
+  .hero .meta-row{animation-delay:.28s}
+  .hero .cta-row{animation-delay:.38s}
+  @keyframes rise{to{opacity:1;transform:none}}
 
-    .date-rule {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-top: 1.25rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-    }
-
-    .date-rule::before,
-    .date-rule::after {
-      content: "";
-      height: 1px;
-      width: min(5rem, 18vw);
-      background: linear-gradient(90deg, transparent, rgba(232, 213, 181, 0.5), transparent);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .visual {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(232, 213, 181, 0.15);
-    }
-
-    .visual img {
-      display: block;
-      width: 100%;
-      height: auto;
-      vertical-align: middle;
-    }
-
-    .speaker-caption {
-      margin-top: 1rem;
-      padding: 0 0.5rem;
-    }
-
-    .speaker-caption p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .speaker-caption strong {
-      display: block;
-      font-size: 1.1rem;
-      color: var(--white);
-      margin-top: 0.35rem;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: 1.75rem 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .card h2 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 0.35rem;
-    }
-
-    .card .sub {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.75);
-      margin-bottom: 0.35rem;
-    }
-
-    .field {
-      margin-bottom: 1rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-      width: 100%;
-      padding: 0.75rem 0.9rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(15, 5, 20, 0.6);
-      color: var(--white);
-      font: inherit;
-      font-size: 1rem;
-    }
-
-    input::placeholder {
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-    input:focus {
-      outline: none;
-      border-color: var(--gold-rich);
-      box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.2);
-    }
-
-    .optional-tag {
-      font-weight: 500;
-      text-transform: none;
-      letter-spacing: 0;
-      opacity: 0.7;
-      font-size: 0.75rem;
-    }
-
-    .btn {
-      width: 100%;
-      margin-top: 0.5rem;
-      padding: 0.9rem 1.25rem;
-      border: none;
-      border-radius: 10px;
-      font-family: "Outfit", sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      background: linear-gradient(180deg, #d4b978 0%, var(--gold-rich) 100%);
-      color: var(--purple-deep);
-      box-shadow: 0 8px 24px rgba(201, 169, 98, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(201, 169, 98, 0.45);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-    }
-
-    .alt-reg {
-      margin-top: 1.25rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .alt-reg a {
-      color: var(--gold);
-      word-break: break-all;
-    }
-
-    footer {
-      margin-top: 3rem;
-      padding: 1.75rem 1.5rem;
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    footer h3 {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.55);
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2.5rem;
-      font-size: 0.95rem;
-    }
-
-    .contact-grid a {
-      color: var(--white);
-      text-decoration: none;
-    }
-
-    .contact-grid a:hover {
-      text-decoration: underline;
-      color: var(--gold);
-    }
-  </style>
+  @media (max-width:860px){
+    .cards{grid-template-columns:1fr}
+    .convener .wrap{grid-template-columns:1fr}
+    .portrait{aspect-ratio:16/10}
+    .details{grid-template-columns:1fr}
+    .reg-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .two{grid-template-columns:1fr}
+    .topbar a{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
 </head>
 <body>
-  <div class="page-bg" aria-hidden="true"></div>
 
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap topbar">
+    <div class="brand">Stephen Akintayo Foundation</div>
+    <a href="#register">Reserve a seat →</a>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow kicker">The Foundation presents · Doha, Qatar</div>
+    <h1>Doha CEO &amp;<br><em>Founders</em> Meet &amp; Greet</h1>
+    <p class="lede">One room. The operators building across borders. A working session on global expansion and the high-level access that makes it move faster.</p>
+    <div class="meta-row">
+      <span class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Monday, 6 July 2026</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Doha, Qatar</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg>By invitation &amp; registration</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#register">Reserve my seat</a>
+      <a class="btn btn-ghost" href="#about">Meet the convener</a>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,160 L0,110 L60,110 L60,80 L120,80 L120,120 L180,120 L180,60 L210,40 L240,60 L240,120 L320,120 L340,70 L360,120 L430,120 L430,90 L490,90 L490,50 L520,30 L550,50 L550,120 L1440,120 L1440,160 Z"/>
+    <path class="near" d="M620,160 L620,100 L690,100 L690,70 L720,55 L750,70 L750,100 L830,100 L830,84 L900,84 L900,120 L980,120 L1000,64 L1020,120 L1100,120 L1100,96 L1180,96 L1180,72 L1260,72 L1260,104 L1340,104 L1340,88 L1440,88 L1440,160 Z"/>
+  </svg>
+</header>
+
+<!-- ===== VALUE STRIP ===== -->
+<div class="strip">
   <div class="wrap">
-    <header class="logo-row">
-      <div class="logo">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
-          <ellipse cx="12" cy="12" rx="4" ry="10" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
-          <path d="M2 12h20" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
-        </svg>
-        <span>Stephen Akintayo Foundation</span>
+    <span>Global Expansion</span><span class="dot">◆</span>
+    <span>High-Level Access</span><span class="dot">◆</span>
+    <span>Founder-to-Founder</span><span class="dot">◆</span>
+    <span>Gulf &amp; Beyond</span>
+  </div>
+</div>
+
+<!-- ===== WHY ===== -->
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why this room</div>
+      <h2>You don't come for slides. You come for the people in the seats.</h2>
+      <p>The Meet &amp; Greet is built for founders and chief executives who are ready to operate beyond their home market. Three reasons it's worth the trip to Doha.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="num">01</span>
+        <h3>Global expansion</h3>
+        <p>Move past the theory of "going international." Spend the day with people who have already opened markets in the Gulf, Africa, Europe and North America — and learn the moves that actually worked.</p>
       </div>
-    </header>
-
-    <section class="hero">
-      <h1>Doha Founders Meet &amp; Greet</h1>
-      <p class="date-rule">4PM · Saturday, 9th May, 2026</p>
-    </section>
-
-    <div class="grid">
-      <div>
-        <div class="visual">
-          <img src="assets/flyer.png" alt="Doha Founders Meet &amp; Greet with Dr. Stephen Akintayo" width="540" height="720" />
-        </div>
-        <div class="speaker-caption">
-          <p>Featured speaker</p>
-          <strong>Dr. Stephen Akintayo</strong>
-          <p style="margin-top: 0.25rem;">Founder, SACI Holdings</p>
-        </div>
+      <div class="card reveal">
+        <span class="num">02</span>
+        <h3>High-level access</h3>
+        <p>Proximity is the product. Sit alongside capital, operators and decision-makers in one curated room, hosted by the Stephen Akintayo Foundation in one of the world's fastest-moving business hubs.</p>
       </div>
-
-      <div class="card">
-        <h2>Register</h2>
-        <p class="sub">Reserve your spot for the meet and greet. We will confirm by email.</p>
-
-        <form id="reg-form" action="https://formspree.io/f/xaqvbwnl" method="POST" novalidate>
-          <div class="field">
-            <label for="fullName">Full name</label>
-            <input id="fullName" name="fullName" type="text" autocomplete="name" required placeholder="Your full name" />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
-          </div>
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+974 … or your number" />
-          </div>
-          <div class="field">
-            <label for="company" required>Company / startup <span class="optional-tag"></span></label>
-            <input id="company" name="company" type="text" autocomplete="organization" placeholder="Name of your company" />
-          </div>
-          <button type="submit" class="btn">Register now</button>
-        </form>
-
-        <!-- <p class="alt-reg">
-          Prefer the main site?<br />
-          <a href="https://www.stephenakintayo.com/dohameet" target="_blank" rel="noopener noreferrer">www.stephenakintayo.com/dohameet</a>
-        </p> -->
+      <div class="card reveal">
+        <span class="num">03</span>
+        <h3>Founder network</h3>
+        <p>The conversations continue long after 6 July. Walk away with relationships you can call on — partners, co-investors and peers solving the same scale problems you are.</p>
       </div>
     </div>
-
-    <footer>
-      <h3>For more info</h3>
-      <div class="contact-grid">
-        <a href="mailto:PRODUCTS@STEPHENAKINTAYO.COM">PRODUCTS@STEPHENAKINTAYO.COM</a>
-        <a href="tel:+2348167901719">+234 816 790 1719</a>
-        <a href="tel:+12815050527">+1 (281) 505-0527</a>
-      </div>
-    </footer>
   </div>
+</section>
 
-  <script>
-    (function () {
-      var form = document.getElementById("reg-form");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (!form.reportValidity()) return;
-        var btn = form.querySelector('button[type="submit"]');
-        btn.disabled = true;
-        fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        })
-          .then(function (res) {
-            if (res.ok) {
-              window.location.href = "thank-you.html";
-            } else {
-              return res.json().then(function (data) {
-                var msg =
-                  (data && data.error) || "Something went wrong. Please try again.";
-                throw new Error(typeof msg === "string" ? msg : "Submit failed");
-              });
-            }
-          })
-          .catch(function () {
-            btn.disabled = false;
-            alert("Could not send your registration. Please try again or email us.");
-          });
+<!-- ===== CONVENER ===== -->
+<section class="convener block" id="about">
+  <div class="wrap">
+    <div class="portrait reveal"><img src="https://usngrealestate.com/wp-content/uploads/2024/10/Dr-Stephen-Akintayo-2.jpg" alt="Dr. Stephen Akintayo, Chairman of SACI Holdings"></div>
+    <div class="reveal">
+      <div class="eyebrow">Your convener</div>
+      <h2>Dr. Stephen Akintayo</h2>
+      <div class="role">Chairman, SACI Holdings</div>
+      <p>An investor, entrepreneur and convener who has spent his career helping founders raise capital, expand across borders and build durable businesses. The Doha Meet &amp; Greet is his invitation to bring that network into one room and to put high-level access within reach of the operators who'll use it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DETAILS ===== -->
+<section class="block" id="details">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">The essentials</div>
+      <h2>Where and when</h2>
+    </div>
+    <div class="details reveal">
+      <div class="detail">
+        <div class="lbl">Date</div>
+        <div class="val">Monday, 6 July 2026</div>
+        <div class="sub">Full programme · arrival details on confirmation</div>
+      </div>
+      <div class="detail">
+        <div class="lbl">Location</div>
+        <div class="val">Doha, Qatar</div>
+        <div class="sub">Exact venue shared with confirmed guests</div>
+      </div>
+      <div class="detail">
+        <div class="lbl">Format</div>
+        <div class="val">Meet &amp; Greet</div>
+        <div class="sub">Curated, registration required, limited seats</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REGISTER ===== -->
+<section class="register block" id="register">
+  <div class="wrap reg-grid">
+    <div class="reg-copy reveal">
+      <div class="eyebrow">Reserve your place</div>
+      <h2>Seats are <em>limited</em> and curated.</h2>
+      <p>Tell us who you are and we'll confirm your place in the room. Registrations are reviewed to keep the day useful for everyone in it.</p>
+      <ul class="reg-list">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Confirmation and arrival details by email</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Programme and guest list shared ahead of the day</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Sponsorship &amp; partnership options on request</li>
+      </ul>
+    </div>
+
+    <div class="form-card reveal">
+      <div id="formBody">
+        <h3>Request your seat</h3>
+        <p class="hint">Doha · 6 July 2026</p>
+        <div class="two">
+          <div class="field"><label for="fn">First name</label><input id="fn" type="text" placeholder="First name" autocomplete="given-name"></div>
+          <div class="field"><label for="ln">Last name</label><input id="ln" type="text" placeholder="Last name" autocomplete="family-name"></div>
+        </div>
+        <div class="field"><label for="em">Work email</label><input id="em" type="email" placeholder="you@company.com" autocomplete="email"></div>
+        <div class="field"><label for="ph">Phone (WhatsApp)</label><input id="ph" type="tel" placeholder="+000 000 000 0000" autocomplete="tel"></div>
+        <div class="two">
+          <div class="field"><label for="co">Company</label><input id="co" type="text" placeholder="Company"></div>
+          <div class="field"><label for="rl">Your role</label>
+            <select id="rl">
+              <option value="">Select…</option>
+              <option>Founder / Co-founder</option>
+              <option>CEO</option>
+              <option>C-suite / Director</option>
+              <option>Investor</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <p class="form-error" id="formError" role="alert">Something went wrong — please try again, or email products@stephenakintayo.com.</p>
+        <button class="btn btn-gold" id="submitBtn">Reserve my seat</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPONSOR ===== -->
+<section class="sponsor" id="sponsor">
+  <div class="wrap">
+    <div class="eyebrow">Sponsorship &amp; partnership</div>
+    <h2>Put your brand in the room.</h2>
+    <p>Reach a curated audience of founders, CEOs and investors in Doha. Sponsorship and partnership packages are available on request.</p>
+    <div class="contacts">
+      <div class="contact">
+        <div class="lbl">Email</div>
+        <div class="val"><a href="mailto:products@stephenakintayo.com">products@stephenakintayo.com</a></div>
+      </div>
+      <div class="contact">
+        <div class="lbl">Call / WhatsApp</div>
+        <div class="val"><a href="tel:+2348167901719">+234 816 790 1719</a></div>
+      </div>
+      <div class="contact">
+        <div class="lbl">International</div>
+        <div class="val"><a href="tel:+12815050527">+1 (281) 505-0527</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Stephen Akintayo Foundation · Doha CEO &amp; Founders Meet &amp; Greet</span>
+    <span>Register: stephenakintayo.com/doha</span>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // form handling — submits to Formspree
+  const FORM_ENDPOINT = "https://formspree.io/f/xaqvbwnl";
+  const btn = document.getElementById('submitBtn');
+  const errBox = document.getElementById('formError');
+
+  btn.addEventListener('click', async ()=>{
+    const fn = document.getElementById('fn').value.trim();
+    const ln = document.getElementById('ln').value.trim();
+    const em = document.getElementById('em').value.trim();
+    const ph = document.getElementById('ph').value.trim();
+    const co = document.getElementById('co').value.trim();
+    const rl = document.getElementById('rl').value;
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+
+    if(!fn || !emailOk){
+      const target = !fn ? document.getElementById('fn') : document.getElementById('em');
+      target.style.borderColor = '#b3402f';
+      target.focus();
+      return;
+    }
+
+    errBox.classList.remove('show');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const payload = {
+      name: (fn + ' ' + ln).trim(),
+      email: em,
+      phone: ph,
+      company: co,
+      role: rl,
+      event: 'Doha CEO & Founders Meet & Greet — 6 July 2026',
+      _subject: 'New Doha registration: ' + (fn + ' ' + ln).trim()
+    };
+
+    try{
+      const res = await fetch(FORM_ENDPOINT, {
+        method:'POST',
+        headers:{ 'Accept':'application/json', 'Content-Type':'application/json' },
+        body: JSON.stringify(payload)
       });
-    })();
-  </script>
+      if(res.ok){
+        window.location.href = '/thankyou';
+      } else {
+        throw new Error('Bad response');
+      }
+    } catch(e){
+      errBox.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Reserve my seat';
+    }
+  });
+
+  ['fn','em'].forEach(id=>{
+    document.getElementById(id).addEventListener('input', e=>{ e.target.style.borderColor=''; });
+  });
+</script>
 </body>
 </html>
